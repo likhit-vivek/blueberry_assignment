@@ -2,7 +2,7 @@
 <html>
 
 <?php 
-include('constants.php');
+include('connect.php');
 $rootPath = "http://".$server."/blueberry_assignment";
 error_reporting(0);
 session_start();
