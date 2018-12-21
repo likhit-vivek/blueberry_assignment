@@ -22,15 +22,18 @@ if($result->num_rows > 0) {
 	</thead>
 	<tbody>
 		<?php while($row = $result->fetch_array(MYSQLI_ASSOC)) { ?>
-		<tr class="d-flex">
+		<tr class="d-flex" id="<?php echo $row['id']; ?>">
 			<td class="col-lg-2"><?php echo $row['id']; ?></td>
 			<td class="col-lg-2"><?php echo $row['title']; ?></td>
 			<td class="col-lg-4"><?php echo $row['description']; ?></td>
 			<td class="col-lg-2"><?php echo $row['price']; ?></td>
 			<td class="col-lg-2">
 				<a type="button" class="btn btn-success btn-action" href="viewProduct.php?id=<?php echo $row['id']; ?>"><i class="fas fa-eye fa-fw"></i></a>
+				<?php if($_SESSION['user_role'] == 1 || $_SESSION['user_role'] == 2) { ?>
 				<a type="button" class="btn btn-primary btn-action" href="editProduct.php?id=<?php echo $row['id']; ?>"><i class="fas fa-edit fa-fw"></i></a>
+				<?php } if($_SESSION['user_role'] == 1) { ?>
 				<a type="button" class="btn btn-danger btn-action" href="deleteProduct.php?id=<?php echo $row['id']; ?>"><i class="fas fa-times fa-fw"></i></a>
+				<?php } ?>
 			</td>
 		</tr>
 		<?php } ?>
