@@ -2,7 +2,7 @@
 include('connect.php');
 include('header.php');
 
-if(!$_SESSION['user_id']) header('location:index.php');
+if(!isset($_SESSION['user_id'])) header('location:index.php');
 
 $query = "SELECT * FROM products";
 $result = $mysqli->query($query);

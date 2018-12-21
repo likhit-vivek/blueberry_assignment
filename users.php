@@ -3,7 +3,7 @@ include('connect.php');
 include('header.php');
 include('constants.php');
 
-if(!$_SESSION['user_id']) header('location:index.php');
+if(!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 1) header('location:index.php');
 
 $query = "SELECT * FROM users";
 $result = $mysqli->query($query);
