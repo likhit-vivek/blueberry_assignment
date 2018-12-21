@@ -1,7 +1,9 @@
 {
     "name": "vivek/blueberry_assignment",
     "require": {
-        "php": "7.3"
+        "php": "7.3",
+        "csanquer/pdo-service-provider": "~1.1dev",
+		"ext-mysqli": "*"
     },
     "authors": [
         {
