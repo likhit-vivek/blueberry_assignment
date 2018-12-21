@@ -1,6 +1,6 @@
 <?php
 
-include('connect.php');
+include('../connect.php');
 
 if(empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['pwd']) || empty($_POST['role'])) {
 	echo json_encode(["success"=> false, "msg"=> "Please enter all values"]); exit;

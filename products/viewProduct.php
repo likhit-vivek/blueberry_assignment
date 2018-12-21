@@ -1,6 +1,6 @@
 <?php
-include('connect.php');
-include('header.php');
+include('../connect.php');
+include('../header.php');
 
 if(!isset($_GET['id'])) {
 	echo "<h2>Please select a product to view</h2>"; exit;
@@ -26,6 +26,6 @@ if($result->num_rows == 1) {
 	<?php }
 }
 
-include('footer.php');
+include('../footer.php');
 
 ?>

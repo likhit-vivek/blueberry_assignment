@@ -3,7 +3,7 @@ include('connect.php');
 include('header.php');
 
 if(isset($_SESSION['user_id'])) {
-	header("location:home.php"); exit;
+	header("location:products/home.php"); exit;
 }
 
 $error_msg = "";
@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 		$row = $result->fetch_array(MYSQLI_ASSOC);
 		$_SESSION['user_id'] = $row['id'];
 		$_SESSION['user_role'] = $row['role'];
-		header("location:home.php"); exit;
+		header("location:products/home.php"); exit;
 	} else {
 		$error_msg = "Invalid username/password";
 	}

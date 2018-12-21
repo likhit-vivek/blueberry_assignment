@@ -1,9 +1,9 @@
 <?php
-include('connect.php');
-include('header.php');
+include('../connect.php');
+include('../header.php');
 
 if(!isset($_SESSION['user_id'])) {
-	header('location:index.php'); exit;
+	header('location:../index.php'); exit;
 }
 
 $query = "SELECT * FROM products";
@@ -51,4 +51,4 @@ if($result->num_rows > 0) {
 
 <?php } ?>
 
-<?php include('footer.php'); ?>
+<?php include('../footer.php'); ?>

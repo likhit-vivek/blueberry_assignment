@@ -1,9 +1,9 @@
 <?php
-include('connect.php');
-include('header.php');
-include('constants.php');
+include('../connect.php');
+include('../header.php');
+include('../constants.php');
 
-if(!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 1) header('location:index.php');
+if(!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 1) header('location:../index.php');
 
 $query = "SELECT * FROM users";
 $result = $mysqli->query($query);
@@ -43,4 +43,4 @@ if($result->num_rows > 0) {
 
 <?php } ?>
 
-<?php include('footer.php'); ?>
+<?php include('../footer.php'); ?>

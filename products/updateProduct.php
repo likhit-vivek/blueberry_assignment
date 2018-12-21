@@ -1,8 +1,8 @@
 <?php 
-include('connect.php');
-include('header.php'); 
+include('../connect.php');
+include('../header.php'); 
 if(!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 1 && $_SESSION['user_role'] != 2) {
-	header('location:index.php'); exit;
+	header('location:../index.php'); exit;
 }
 
 if(!isset($_GET['id'])) {
@@ -44,5 +44,5 @@ if($result->num_rows == 1) {
 
 <?php }
 }
-include('footer.php'); 
+include('../footer.php'); 
 ?>

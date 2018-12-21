@@ -1,8 +1,8 @@
 <?php 
 
-include('header.php'); 
+include('../header.php'); 
 if(!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 1) {
-	header('location:index.php'); exit;
+	header('location:../index.php'); exit;
 }
 
 ?>
@@ -42,4 +42,4 @@ if(!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 1) {
 	<div class="col"></div>
 </div>
 
-<?php include('footer.php'); ?>
+<?php include('../footer.php'); ?>
