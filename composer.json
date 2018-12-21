@@ -1,0 +1,12 @@
+{
+    "name": "vivek/blueberry_assignment",
+    "require": {
+        "php": "7.3"
+    },
+    "authors": [
+        {
+            "name": "likhit-vivek",
+            "email": "vivekguf1509@gmail.com"
+        }
+    ]
+}
