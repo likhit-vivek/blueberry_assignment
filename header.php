@@ -31,9 +31,11 @@ session_start();
 				<li class="nav-item">
 					<a class="nav-link" href="home.php">Products</a>
 				</li>
+				<?php if($_SESSION['user_role'] == 1) { ?>
 				<li class="nav-item">
 					<a class="nav-link" href="users.php">Users</a>
 				</li>
+				<?php } ?>
 				<li class="nav-item">
 					<a class="nav-link" href="logout.php">Sign out</a>
 				</li>

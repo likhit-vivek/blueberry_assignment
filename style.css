@@ -1,12 +1,16 @@
-.login-container {
-	margin-top: 15%;
-}
-
-.login-area {
-	margin: auto;
+.vertical-align-container {
+	height: 80vh;
 }
 
 .btn-action {
 	padding: 4px 8px;
 	color: white !important;
+}
+
+.create-button {
+	margin: 20px 0;
+}
+
+.form-heading {
+	margin-bottom: 20px;
 }

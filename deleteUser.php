@@ -1,16 +1,20 @@
 <?php
 
 include('connect.php');
+session_start();
 
 $userId = $_POST['userId'];
-$role = $_POST['role'];
 
-if($userId == $_SESSION['user_id']) return json_encode({"success": false});
+if($userId == $_SESSION['user_id']) {
+	echo json_encode(["success"=> false]); exit;
+}
 
 $query = "DELETE FROM users WHERE id=$userId";
 
-if($mysqli->query($query) == true) return json_encode({"success": true});
+if($mysqli->query($query) == true) {
+	echo json_encode(["success"=> true]); exit;
+}
 
-return json_encode({"success": false});
+echo json_encode(["success"=> false]); exit;
 
 ?>

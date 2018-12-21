@@ -25,8 +25,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 }
 ?>
 
-	<div class="text-center login-container">
-		<div class="col-lg-5 col-xl-4 login-area">
+	<div class="text-center row align-items-center vertical-align-container">
+		<div class="col"></div>
+		<div class="col-lg-5 col-xl-4">
 			<form method="POST">
 				<?php if($error_msg != "") { ?>
 					<div class="alert alert-danger">
@@ -42,6 +43,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 				<button type="submit" class="btn btn-primary col-12">Login</button>
 			</form>
 		</div>
+		<div class="col"></div>
 	</div>
 	
 <?php include('footer.php'); ?>
