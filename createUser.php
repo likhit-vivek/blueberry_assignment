@@ -1,7 +1,9 @@
 <?php 
 
 include('header.php'); 
-if(!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 1) header('location:index.php');
+if(!isset($_SESSION['user_id']) || $_SESSION['user_role'] != 1) {
+	header('location:index.php'); exit;
+}
 
 ?>
 

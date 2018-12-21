@@ -2,14 +2,23 @@
 include('connect.php');
 include('header.php');
 
-if(!isset($_SESSION['user_id'])) header('location:index.php');
+if(!isset($_SESSION['user_id'])) {
+	header('location:index.php'); exit;
+}
 
 $query = "SELECT * FROM products";
 $result = $mysqli->query($query);
 
 if($result->num_rows > 0) {
+	if($_SESSION['user_role'] == 1 || $_SESSION['user_role'] == 2) {
 ?>
 
+<div class="create-button text-right">
+	<a href="createProduct.php" type="button" class="btn btn-primary"><i class="fas fa-plus fa-fw"></i></a>
+</div>
+<?php } ?>
+<div class="alert alert-success d-none">Product deleted successfully!</div>
+<div class="alert alert-danger d-none">Delete operation failed!!</div>
 <table class="table table-responsive-md table-hover">
 	<thead>
 		<tr class="d-flex">
@@ -28,11 +37,11 @@ if($result->num_rows > 0) {
 			<td class="col-lg-4"><?php echo $row['description']; ?></td>
 			<td class="col-lg-2"><?php echo $row['price']; ?></td>
 			<td class="col-lg-2">
-				<a type="button" class="btn btn-success btn-action" href="viewProduct.php?id=<?php echo $row['id']; ?>"><i class="fas fa-eye fa-fw"></i></a>
+				<a type="button" class="btn btn-success btn-action" href="viewProduct.php?id=<?php echo $row['id']; ?>"><i class="fas fa-eye fa-fw"></i></a>  
 				<?php if($_SESSION['user_role'] == 1 || $_SESSION['user_role'] == 2) { ?>
-				<a type="button" class="btn btn-primary btn-action" href="editProduct.php?id=<?php echo $row['id']; ?>"><i class="fas fa-edit fa-fw"></i></a>
+				<a type="button" class="btn btn-primary btn-action" href="updateProduct.php?id=<?php echo $row['id']; ?>"><i class="fas fa-edit fa-fw"></i></a>
 				<?php } if($_SESSION['user_role'] == 1) { ?>
-				<a type="button" class="btn btn-danger btn-action" href="deleteProduct.php?id=<?php echo $row['id']; ?>"><i class="fas fa-times fa-fw"></i></a>
+				<a type="button" class="btn btn-danger btn-action" onclick="deleteProduct(<?php echo $row['id'];?>)"><i class="fas fa-times fa-fw"></i></a>
 				<?php } ?>
 			</td>
 		</tr>

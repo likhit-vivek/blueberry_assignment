@@ -14,3 +14,7 @@
 .form-heading {
 	margin-bottom: 20px;
 }
+
+#desc {
+	resize: none;
+}
