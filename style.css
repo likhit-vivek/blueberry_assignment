@@ -5,3 +5,8 @@
 .login-area {
 	margin: auto;
 }
+
+.btn-action {
+	padding: 4px 8px;
+	color: white !important;
+}
