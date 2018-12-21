@@ -3,7 +3,7 @@
 
 <?php 
 include('constants.php');
-$rootPath = "https://".$server."/blueberry_assignment";
+$rootPath = $server."/blueberry_assignment";
 error_reporting(0);
 session_start();
 ?>
